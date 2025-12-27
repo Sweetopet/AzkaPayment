@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Azka Store - QRIS Payment</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
-  <style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:100%;height:100%;font-family:'Poppins',sans-serif;overflow-x:hidden}body{background:linear-gradient(135deg,#000 0,#1a0000 100%);color:#fff}#loading-screen{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a0000 0,#000 50%,#1a0000 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s ease,visibility .5s ease}#loading-screen.hidden{opacity:0;visibility:hidden}.loader-ring{width:120px;height:120px;border:8px solid rgba(239,68,68,.1);border-top:8px solid #ef4444;border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}.loading-text{margin-top:30px;font-size:1.5rem;font-weight:600;color:#ef4444;animation:pulse 1.5s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}.animated-bg{position:relative;min-height:100vh;overflow:hidden}.animated-bg::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(239,68,68,.1) 0,transparent 70%);animation:rotate 20s linear infinite}@keyframes rotate{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}.float-animation{animation:float 3s ease-in-out infinite}.glow-red{box-shadow:0 0 20px rgba(239,68,68,.5),0 0 40px rgba(239,68,68,.3),0 0 60px rgba(239,68,68,.1)}.glow-red-strong{box-shadow:0 0 30px rgba(239,68,68,.8),0 0 60px rgba(239,68,68,.5),0 0 90px rgba(239,68,68,.3)}.hover-lift{transition:transform .3s ease,box-shadow .3s ease;transform-style:preserve-3d;cursor:pointer}.hover-lift:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 20px 40px rgba(239,68,68,.4)}.particle{position:absolute;width:4px;height:4px;background:#ef4444;border-radius:50%;opacity:.6;animation:particle-float 4s ease-in-out infinite}@keyframes particle-float{0%,100%{transform:translate(0,0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translate(var(--tx),var(--ty));opacity:0}}</style>
+  <style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:100%;height:100%;font-family:'Poppins',sans-serif;overflow-x:hidden}body{background:linear-gradient(135deg,#000 0,#1a0000 100%);color:#fff;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}#loading-screen{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a0000 0,#000 50%,#1a0000 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s ease,visibility .5s ease}#loading-screen.hidden{opacity:0;visibility:hidden;pointer-events:none}.loader-ring{width:120px;height:120px;border:8px solid rgba(239,68,68,.1);border-top:8px solid #ef4444;border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}.loading-text{margin-top:30px;font-size:1.5rem;font-weight:600;color:#ef4444;animation:pulse 1.5s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}.animated-bg{position:relative;min-height:100vh;overflow:hidden}.animated-bg::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(239,68,68,.1) 0,transparent 70%);animation:rotate 20s linear infinite}@keyframes rotate{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}.float-animation{animation:float 3s ease-in-out infinite}.glow-red{box-shadow:0 0 20px rgba(239,68,68,.5),0 0 40px rgba(239,68,68,.3),0 0 60px rgba(239,68,68,.1)}.glow-red-strong{box-shadow:0 0 30px rgba(239,68,68,.8),0 0 60px rgba(239,68,68,.5),0 0 90px rgba(239,68,68,.3)}.hover-lift{transition:transform .3s ease,box-shadow .3s ease;transform-style:preserve-3d;cursor:pointer}.hover-lift:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 20px 40px rgba(239,68,68,.4)}.particle{position:absolute;width:4px;height:4px;background:#ef4444;border-radius:50%;opacity:.6;animation:particle-float 4s ease-in-out infinite}@keyframes particle-float{0%,100%{transform:translate(0,0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translate(var(--tx),var(--ty));opacity:0}}.gradient-text{background:linear-gradient(135deg,#ef4444 0,#ff6b6b 50%,#ef4444 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradient-shift 3s ease infinite}@keyframes gradient-shift{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}.scan-line{position:absolute;width:100%;height:2px;background:linear-gradient(90deg,transparent,#ef4444,transparent);animation:scan 2s linear infinite;pointer-events:none}@keyframes scan{0%{top:0}100%{top:100%}}.neon-border{position:relative;border:2px solid #ef4444;box-shadow:0 0 10px #ef4444,inset 0 0 10px rgba(239,68,68,.3)}.neon-border::before{content:'';position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(45deg,#ef4444,#dc2626,#ef4444,#dc2626);background-size:400% 400%;border-radius:inherit;z-index:-1;animation:neon-glow 3s ease infinite;opacity:.5;filter:blur(10px)}@keyframes neon-glow{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}.fade-in{animation:fadeIn 1s ease-out forwards;opacity:0}.fade-in-delay-1{animation-delay:.2s}.fade-in-delay-2{animation-delay:.4s}.fade-in-delay-3{animation-delay:.6s}@keyframes fadeIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.ripple{position:relative;overflow:hidden}.ripple::after{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(239,68,68,.5);transform:translate(-50%,-50%);transition:width .6s,height .6s}.ripple:active::after{width:300px;height:300px}@keyframes shine{0%{left:-100%}100%{left:100%}}.shine-effect{position:relative;overflow:hidden}.shine-effect::before{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:shine 3s infinite;pointer-events:none}.container{max-width:1200px;margin:0 auto;padding:0 1rem;position:relative;z-index:1}header{padding:3rem 0;text-align:center}.logo-container{display:inline-block;margin-bottom:1.5rem;position:relative}.store-name{font-size:3.75rem;font-weight:800;margin-bottom:1rem}.store-tagline{font-size:1.5rem;font-weight:300;color:rgba(255,255,255,.8)}.divider{display:flex;justify-content:center;gap:.5rem;margin-top:1.5rem}.divider-line{height:4px;border-radius:2px;background:#ef4444}.divider-line:first-child{width:60px}.divider-line:nth-child(2),.divider-line:nth-child(3){width:20px;opacity:.4}main{padding-bottom:4rem}.payment-header{text-align:center;margin-bottom:3rem}.payment-title{font-size:2.5rem;font-weight:700;margin-bottom:1rem}.payment-description{font-size:1.125rem;color:rgba(255,255,255,.7)}.qris-card-wrapper{max-width:48rem;margin:0 auto 3rem}.qris-card{background:linear-gradient(135deg,rgba(26,0,0,.95) 0,rgba(0,0,0,.95) 100%);backdrop-filter:blur(10px);border-radius:1.5rem;padding:2rem}.qris-badge{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 2rem;background:rgba(239,68,68,.2);border:2px solid #ef4444;border-radius:9999px;margin-bottom:1.5rem}.qris-badge span{font-weight:700;font-size:1.125rem;color:#ef4444}.qris-image-container{display:flex;justify-content:center;margin-bottom:1.5rem}.qris-image-wrapper{position:relative;padding:1.5rem;background:rgba(255,255,255,.98);border-radius:1rem}.qris-image{width:100%;max-width:24rem;border-radius:.75rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);display:block;pointer-events:none;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none}.corner-decoration{position:absolute;width:30px;height:30px;border:3px solid #ef4444}.corner-tl{top:0;left:0;border-right:none;border-bottom:none;border-radius:.5rem 0 0 0}.corner-tr{top:0;right:0;border-left:none;border-bottom:none;border-radius:0 .5rem 0 0}.corner-bl{bottom:0;left:0;border-right:none;border-top:none;border-radius:0 0 0 .5rem}.corner-br{bottom:0;right:0;border-left:none;border-top:none;border-radius:0 0 .5rem 0}.scan-instruction{text-align:center;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:.5rem;font-weight:500;color:rgba(255,255,255,.9)}.supported-apps{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}.app-badge{display:flex;align-items:center;gap:.5rem;padding:.75rem 1.25rem;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);border-radius:.75rem}.app-badge span{font-size:.875rem;font-weight:600}.info-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem}.info-card{background:linear-gradient(135deg,rgba(239,68,68,.15) 0,rgba(0,0,0,.3) 100%);border:1px solid rgba(239,68,68,.3);border-radius:1rem;padding:2rem;text-align:center}.info-card svg{margin:0 auto 1rem}.info-card h3{font-size:1.25rem;font-weight:700;color:#ef4444;margin-bottom:.75rem}.info-card p{font-size:.875rem;color:rgba(255,255,255,.7)}footer{background:rgba(0,0,0,.5);border-top:1px solid rgba(239,68,68,.3);padding:2rem 0;text-align:center}.footer-content{display:flex;align-items:center;justify-content:center;gap:.5rem;color:rgba(255,255,255,.6)}@media (max-width:768px){.store-name{font-size:2.5rem}.store-tagline{font-size:1.125rem}.payment-title{font-size:1.875rem}.payment-description{font-size:1rem}.qris-card{padding:1.5rem}.info-cards{grid-template-columns:1fr}}</style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
   <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
@@ -14,64 +14,128 @@
  <body>
   <div id="loading-screen">
    <div class="loader-ring"></div>
-   <div class="loading-text">Loading Payment Gateway...</div>
-   <div style="margin-top:10px;color:rgba(239,68,68,.7);font-size:.9rem">Mohon tunggu sebentar</div>
+   <div class="loading-text">
+    Loading Payment Gateway...
+   </div>
+   <div style="margin-top:10px;color:rgba(239,68,68,.7);font-size:.9rem">
+    Mohon tunggu sebentar
+   </div>
   </div>
-
   <div class="animated-bg">
    <div id="particles-container" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0"></div>
-
-<!-- ======================= HTML ASLI (TIDAK DIUBAH) ======================= -->
-<!-- ⚠️ SEMUA KONTEN DI TENGAH INI IDENTIK DENGAN KODE KAMU -->
-<!-- (dipertahankan utuh sesuai permintaan) -->
-<!-- ======================================================================= -->
-
+   <header>
+    <div class="container">
+     <div class="logo-container float-animation fade-in">
+      <div style="position:relative">
+       <div class="glow-red-strong" style="position:absolute;inset:0;border-radius:50%;opacity:.5"></div>
+       <svg width="100" height="100" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" fill="#ef4444" opacity=".2" /><circle cx="50" cy="50" r="45" stroke="#ef4444" stroke-width="3" fill="none" /><path d="M30 50L50 35L70 50V75C70 77.7614 67.7614 80 65 80H35C32.2386 80 30 77.7614 30 75V50Z" fill="#ef4444" /><path d="M40 80V60C40 58.3431 41.3431 57 43 57H57C58.6569 57 60 58.3431 60 60V80" fill="#1a0000" /><path d="M25 50L50 30L75 50" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><circle cx="50" cy="50" r="48" stroke="#ef4444" stroke-width="2" stroke-dasharray="8 8" opacity=".3">
+         <animatetransform attributename="transform" type="rotate" from="0 50 50" to="360 50 50" dur="20s" repeatcount="indefinite" />
+        </circle>
+       </svg>
+      </div>
+     </div>
+     <h1 class="store-name gradient-text fade-in fade-in-delay-1">Azka Store</h1>
+     <p class="store-tagline fade-in fade-in-delay-2">Belanja Berkualitas, Pembayaran Praktis</p>
+     <div class="divider fade-in fade-in-delay-3">
+      <div class="divider-line"></div>
+      <div class="divider-line"></div>
+      <div class="divider-line"></div>
+     </div>
+    </div>
+   </header>
+   <main>
+    <div class="container">
+     <div class="payment-header fade-in fade-in-delay-2">
+      <h2 class="payment-title">Scan QRIS untuk Pembayaran</h2>
+      <p class="payment-description">Metode pembayaran tercepat dan termudah dengan teknologi QRIS</p>
+     </div>
+     <div class="qris-card-wrapper fade-in fade-in-delay-3">
+      <div class="qris-card neon-border hover-lift shine-effect" id="qris-main-card">
+       <div style="position:relative">
+        <div class="scan-line"></div>
+        <div style="text-align:center">
+         <div class="qris-badge glow-red">
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <rect width="10" height="10" x="2" y="2" fill="#ef4444" rx="2" /><rect width="10" height="10" x="16" y="2" fill="#ef4444" rx="2" /><rect width="10" height="10" x="2" y="16" fill="#ef4444" rx="2" /><rect width="4" height="4" x="18" y="18" fill="#ef4444" /><rect width="4" height="4" x="22" y="22" fill="#ef4444" />
+          </svg><span>QRIS PAYMENT</span>
+         </div>
+        </div>
+        <div class="qris-image-container">
+         <div class="qris-image-wrapper glow-red">
+          <img src="https://files.catbox.moe/ow35pn.jpg" alt="QRIS Code Azka Store" class="qris-image">
+          <div class="corner-decoration corner-tl"></div>
+          <div class="corner-decoration corner-tr"></div>
+          <div class="corner-decoration corner-bl"></div>
+          <div class="corner-decoration corner-br"></div>
+         </div>
+        </div>
+        <div class="scan-instruction">
+         <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="2" width="14" height="20" rx="2" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.1)" /><circle cx="12" cy="19" r="1" fill="#ef4444" /><rect x="7" y="5" width="10" height="11" rx="1" fill="rgba(239,68,68,.2)" /><path d="M10 8L14 12M14 8L10 12" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round" />
+         </svg><span>Arahkan kamera e-wallet ke kode QRIS di atas</span>
+        </div>
+        <div class="supported-apps">
+         <div class="app-badge hover-lift ripple">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <rect x="3" y="5" width="18" height="14" rx="2" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.2)" /><path d="M3 9H21" stroke="#ef4444" stroke-width="2" /><rect x="6" y="13" width="5" height="3" rx="1" fill="#ef4444" />
+          </svg><span>GoPay</span>
+         </div>
+         <div class="app-badge hover-lift ripple">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <path d="M3 9L12 2L21 9V20C21 21.1046 20.1046 22 19 22H5C3.89543 22 3 21.1046 3 20V9Z" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.1)" /><path d="M9 22V12H15V22" stroke="#ef4444" stroke-width="2" /><circle cx="12" cy="9" r="1.5" fill="#ef4444" />
+          </svg><span>OVO</span>
+         </div>
+         <div class="app-badge hover-lift ripple">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <circle cx="12" cy="12" r="9" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.1)" /><path d="M8 12H16M12 8V16" stroke="#ef4444" stroke-width="2" stroke-linecap="round" /><circle cx="12" cy="12" r="6" stroke="#ef4444" stroke-width="1" opacity=".5" />
+          </svg><span>DANA</span>
+         </div>
+         <div class="app-badge hover-lift ripple">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <path d="M3 3H8L11 16H20L23 7H9" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /><circle cx="11" cy="20" r="2" fill="#ef4444" /><circle cx="19" cy="20" r="2" fill="#ef4444" />
+          </svg><span>ShopeePay</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="info-cards">
+      <div class="info-card hover-lift fade-in fade-in-delay-1">
+       <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="28" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.1)" /><path d="M30 15L35 25L45 27L37 35L39 45L30 40L21 45L23 35L15 27L25 25L30 15Z" fill="#ef4444" /><circle cx="30" cy="30" r="20" stroke="#ef4444" stroke-width="1" opacity=".3" />
+       </svg>
+       <h3>Super Cepat</h3>
+       <p>Pembayaran terverifikasi dalam hitungan detik</p>
+      </div>
+      <div class="info-card hover-lift fade-in fade-in-delay-2">
+       <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="20" width="30" height="25" rx="3" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.1)" /><rect x="25" y="30" width="10" height="8" rx="1" fill="#ef4444" /><circle cx="30" cy="34" r="2" fill="#000" /><path d="M22 20V17C22 13.6863 24.6863 11 28 11H32C35.3137 11 38 13.6863 38 17V20" stroke="#ef4444" stroke-width="2" />
+       </svg>
+       <h3>100% Aman</h3>
+       <p>Terjamin keamanannya oleh Bank Indonesia</p>
+      </div>
+      <div class="info-card hover-lift fade-in fade-in-delay-3">
+       <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="28" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.1)" /><path d="M20 30L27 37L40 23" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><circle cx="30" cy="30" r="23" stroke="#ef4444" stroke-width="1" opacity=".3" />
+       </svg>
+       <h3>Praktis</h3>
+       <p>Scan sekali, langsung selesai</p>
+      </div>
+     </div>
+    </div>
+   </main>
+   <footer>
+    <div class="container">
+     <div class="footer-content">
+      <span>© 2024 - Terima kasih telah berbelanja dengan kami</span>
+      <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M10 3.5C10 3.5 5 6 5 10C5 13 7 16 10 17C13 16 15 13 15 10C15 6 10 3.5 10 3.5Z" fill="#ef4444" /><path d="M10 3.5C10 3.5 5 6 5 10C5 13 7 16 10 17C13 16 15 13 15 10C15 6 10 3.5 10 3.5Z" stroke="#ef4444" stroke-width="1.5" stroke-linejoin="round" />
+      </svg>
+     </div>
+    </div>
+   </footer>
   </div>
-
-<!-- ======================= OBFUSCATED JS (FINAL) ======================= -->
-<script>
-(function(){
-var _0x5e9a=['addEventListener','load','setTimeout','getElementById','classList','add','hidden','createElement','appendChild','particle','style','left','top','setProperty','--tx','--ty','animationDelay','particles-container','mousemove','getBoundingClientRect','clientX','clientY','width','height','transform','mouseleave'];
-(function(_0x4a2b,_0x5e9a){for(;--_0x5e9a;)_0x4a2b.push(_0x4a2b.shift());}(_0x5e9a,0x19));
-var _0x4a2b=function(_0x5e9a){return _0x5e9a};
-
-window[_0x4a2b('addEventListener')](_0x4a2b('load'),function(){
-setTimeout(function(){
-document[_0x4a2b('getElementById')]('loading-screen')[_0x4a2b('classList')][_0x4a2b('add')](_0x4a2b('hidden'));
-},2000);
-});
-
-(function(){
-var c=document[_0x4a2b('getElementById')](_0x4a2b('particles-container'));
-for(var i=0;i<30;i++){
-var p=document[_0x4a2b('createElement')]('div');
-p.className=_0x4a2b('particle');
-p[_0x4a2b('style')][_0x4a2b('left')]=Math.random()*100+'%';
-p[_0x4a2b('style')][_0x4a2b('top')]=Math.random()*100+'%';
-p[_0x4a2b('style')][_0x4a2b('setProperty')](_0x4a2b('--tx'),(Math.random()-.5)*200+'px');
-p[_0x4a2b('style')][_0x4a2b('setProperty')](_0x4a2b('--ty'),(Math.random()-.5)*200+'px');
-p[_0x4a2b('style')][_0x4a2b('animationDelay')]=Math.random()*4+'s';
-c[_0x4a2b('appendChild')](p);
-}
-})();
-
-var q=document[_0x4a2b('getElementById')]('qris-main-card');
-if(q){
-q[_0x4a2b('addEventListener')](_0x4a2b('mousemove'),function(e){
-var r=q[_0x4a2b('getBoundingClientRect')](),
-x=e[_0x4a2b('clientX')]-r.left,
-y=e[_0x4a2b('clientY')]-r.top,
-cx=r[_0x4a2b('width')]/2,
-cy=r[_0x4a2b('height')]/2;
-q[_0x4a2b('style')][_0x4a2b('transform')]='perspective(1000px) rotateX('+((y-cy)/20)+'deg) rotateY('+((cx-x)/20)+'deg) translateY(-5px)';
-});
-q[_0x4a2b('addEventListener')](_0x4a2b('mouseleave'),function(){
-q[_0x4a2b('style')][_0x4a2b('transform')]='perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-});
-}
-})();
-</script>
-<!-- =================================================================== -->
-
- </body>
+  <script>setTimeout(function(){const l=document.getElementById('loading-screen');if(l){l.classList.add('hidden')}},1800);function createParticles(){const c=document.getElementById('particles-container');if(!c)return;for(let i=0;i<30;i++){const d=document.createElement('div');d.className='particle';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.setProperty('--tx',(Math.random()-.5)*200+'px');d.style.setProperty('--ty',(Math.random()-.5)*200+'px');d.style.animationDelay=Math.random()*4+'s';c.appendChild(d)}}createParticles();const q=document.getElementById('qris-main-card');if(q){q.addEventListener('mousemove',function(e){const r=q.getBoundingClientRect();const x=e.clientX-r.left;const y=e.clientY-r.top;q.style.transform='perspective(1000px) rotateX('+((y-r.height/2)/20)+'deg) rotateY('+((r.width/2-x)/20)+'deg) translateY(-5px)'});q.addEventListener('mouseleave',function(){q.style.transform='perspective(1000px) rotateX(0) rotateY(0) translateY(0)'})}document.addEventListener('contextmenu',function(e){e.preventDefault();return false},false);document.addEventListener('keydown',function(e){if(e.keyCode==123||e.ctrlKey&&e.shiftKey&&e.keyCode==73||e.ctrlKey&&e.shiftKey&&e.keyCode==74||e.ctrlKey&&e.keyCode==85||e.ctrlKey&&e.shiftKey&&e.keyCode==67){e.preventDefault();return false}},false);document.addEventListener('selectstart',function(e){e.preventDefault();return false},false);document.addEventListener('copy',function(e){e.preventDefault();return false},false);document.addEventListener('cut',function(e){e.preventDefault();return false},false);document.addEventListener('paste',function(e){e.preventDefault();return false},false);document.addEventListener('dragstart',function(e){e.preventDefault();return false},false);</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b491c7f757834ae',t:'MTc2Njg0MTU4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
