@@ -1,141 +1,643 @@
 <!doctype html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
  <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Moci Tech</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
-  <style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:100%;height:100%;font-family:'Poppins',sans-serif;overflow-x:hidden}body{background:linear-gradient(135deg,#000 0,#1a0000 100%);color:#fff;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}#loading-screen{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a0000 0,#000 50%,#1a0000 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s ease,visibility .5s ease}#loading-screen.hidden{opacity:0;visibility:hidden;pointer-events:none}.loader-ring{width:120px;height:120px;border:8px solid rgba(239,68,68,.1);border-top:8px solid #ef4444;border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}.loading-text{margin-top:30px;font-size:1.5rem;font-weight:600;color:#ef4444;animation:pulse 1.5s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}.animated-bg{position:relative;min-height:100vh;overflow:hidden}.animated-bg::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(239,68,68,.1) 0,transparent 70%);animation:rotate 20s linear infinite}@keyframes rotate{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}.float-animation{animation:float 3s ease-in-out infinite}.glow-red{box-shadow:0 0 20px rgba(239,68,68,.5),0 0 40px rgba(239,68,68,.3),0 0 60px rgba(239,68,68,.1)}.glow-red-strong{box-shadow:0 0 30px rgba(239,68,68,.8),0 0 60px rgba(239,68,68,.5),0 0 90px rgba(239,68,68,.3)}.hover-lift{transition:transform .3s ease,box-shadow .3s ease;transform-style:preserve-3d;cursor:pointer}.hover-lift:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 20px 40px rgba(239,68,68,.4)}.particle{position:absolute;width:4px;height:4px;background:#ef4444;border-radius:50%;opacity:.6;animation:particle-float 4s ease-in-out infinite}@keyframes particle-float{0%,100%{transform:translate(0,0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translate(var(--tx),var(--ty));opacity:0}}.gradient-text{background:linear-gradient(135deg,#ef4444 0,#ff6b6b 50%,#ef4444 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradient-shift 3s ease infinite}@keyframes gradient-shift{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}.scan-line{position:absolute;width:100%;height:2px;background:linear-gradient(90deg,transparent,#ef4444,transparent);animation:scan 2s linear infinite;pointer-events:none}@keyframes scan{0%{top:0}100%{top:100%}}.neon-border{position:relative;border:2px solid #ef4444;box-shadow:0 0 10px #ef4444,inset 0 0 10px rgba(239,68,68,.3)}.neon-border::before{content:'';position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(45deg,#ef4444,#dc2626,#ef4444,#dc2626);background-size:400% 400%;border-radius:inherit;z-index:-1;animation:neon-glow 3s ease infinite;opacity:.5;filter:blur(10px)}@keyframes neon-glow{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}.fade-in{animation:fadeIn 1s ease-out forwards;opacity:0}.fade-in-delay-1{animation-delay:.2s}.fade-in-delay-2{animation-delay:.4s}.fade-in-delay-3{animation-delay:.6s}@keyframes fadeIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.ripple{position:relative;overflow:hidden}.ripple::after{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(239,68,68,.5);transform:translate(-50%,-50%);transition:width .6s,height .6s}.ripple:active::after{width:300px;height:300px}@keyframes shine{0%{left:-100%}100%{left:100%}}.shine-effect{position:relative;overflow:hidden}.shine-effect::before{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:shine 3s infinite;pointer-events:none}.container{max-width:1200px;margin:0 auto;padding:0 1rem;position:relative;z-index:1}header{padding:3rem 0;text-align:center}.logo-container{display:inline-block;margin-bottom:1.5rem;position:relative}.store-name{font-size:3.75rem;font-weight:800;margin-bottom:1rem}.store-tagline{font-size:1.5rem;font-weight:300;color:rgba(255,255,255,.8)}.divider{display:flex;justify-content:center;gap:.5rem;margin-top:1.5rem}.divider-line{height:4px;border-radius:2px;background:#ef4444}.divider-line:first-child{width:60px}.divider-line:nth-child(2),.divider-line:nth-child(3){width:20px;opacity:.4}main{padding-bottom:4rem}.payment-header{text-align:center;margin-bottom:3rem}.payment-title{font-size:2.5rem;font-weight:700;margin-bottom:1rem}.payment-description{font-size:1.125rem;color:rgba(255,255,255,.7)}.qris-card-wrapper{max-width:48rem;margin:0 auto 3rem}.qris-card{background:linear-gradient(135deg,rgba(26,0,0,.95) 0,rgba(0,0,0,.95) 100%);backdrop-filter:blur(10px);border-radius:1.5rem;padding:2rem}.qris-badge{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 2rem;background:rgba(239,68,68,.2);border:2px solid #ef4444;border-radius:9999px;margin-bottom:1.5rem}.qris-badge span{font-weight:700;font-size:1.125rem;color:#ef4444}.qris-image-container{display:flex;justify-content:center;margin-bottom:1.5rem}.qris-image-wrapper{position:relative;padding:1.5rem;background:rgba(255,255,255,.98);border-radius:1rem}.qris-image{width:100%;max-width:24rem;border-radius:.75rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);display:block;pointer-events:none;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none}.corner-decoration{position:absolute;width:30px;height:30px;border:3px solid #ef4444}.corner-tl{top:0;left:0;border-right:none;border-bottom:none;border-radius:.5rem 0 0 0}.corner-tr{top:0;right:0;border-left:none;border-bottom:none;border-radius:0 .5rem 0 0}.corner-bl{bottom:0;left:0;border-right:none;border-top:none;border-radius:0 0 0 .5rem}.corner-br{bottom:0;right:0;border-left:none;border-top:none;border-radius:0 0 .5rem 0}.scan-instruction{text-align:center;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:.5rem;font-weight:500;color:rgba(255,255,255,.9)}.supported-apps{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}.app-badge{display:flex;align-items:center;gap:.5rem;padding:.75rem 1.25rem;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);border-radius:.75rem}.app-badge span{font-size:.875rem;font-weight:600}.info-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem}.info-card{background:linear-gradient(135deg,rgba(239,68,68,.15) 0,rgba(0,0,0,.3) 100%);border:1px solid rgba(239,68,68,.3);border-radius:1rem;padding:2rem;text-align:center}.info-card svg{margin:0 auto 1rem}.info-card h3{font-size:1.25rem;font-weight:700;color:#ef4444;margin-bottom:.75rem}.info-card p{font-size:.875rem;color:rgba(255,255,255,.7)}footer{background:rgba(0,0,0,.5);border-top:1px solid rgba(239,68,68,.3);padding:2rem 0;text-align:center}.footer-content{display:flex;align-items:center;justify-content:center;gap:.5rem;color:rgba(255,255,255,.6)}@media (max-width:768px){.store-name{font-size:2.5rem}.store-tagline{font-size:1.125rem}.payment-title{font-size:1.875rem}.payment-description{font-size:1rem}.qris-card{padding:1.5rem}.info-cards{grid-template-columns:1fr}}</style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MociTech - Solusi Digital & Bot Otomatisasi Profesional</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    .nav-link { transition: color 0.2s; }
+    .nav-link:hover { color: #f472b6; }
+    .glow-card {
+      position: relative; border-radius: 1rem; padding: 1px;
+      background: linear-gradient(135deg, rgba(99,102,241,0.5), rgba(236,72,153,0.5), rgba(245,158,11,0.5));
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .glow-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(236,72,153,0.2); }
+    .glow-card-inner { background-color: #030712; border-radius: calc(1rem - 1px); padding: 1.5rem; height: 100%; }
+    
+    @keyframes float1 { 0%,100%{transform:translate(0,0)}50%{transform:translate(25px,-35px)} }
+    @keyframes float2 { 0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,30px)} }
+    @keyframes pulseGlow { 0%,100%{opacity:0.3; transform:scale(1)}50%{opacity:0.6; transform:scale(1.1)} }
+    
+    .blob-1 { animation: float1 9s ease-in-out infinite; }
+    .blob-2 { animation: float2 11s ease-in-out infinite; }
+    .pulse-orb { animation: pulseGlow 6s ease-in-out infinite; }
+  </style>
  </head>
- <body>
-  <div id="loading-screen">
-   <div class="loader-ring"></div>
-   <div class="loading-text">
-    Loading Payment...
+ <body class="min-h-screen w-full bg-gray-950 text-gray-100 selection:bg-pink-500 selection:text-white overflow-x-hidden">
+  
+  <!-- Navbar Header -->
+  <header class="fixed top-0 w-full z-50 backdrop-blur-xl bg-gray-950/80 border-b border-white/10">
+   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#home" onclick="showLanding()" class="text-2xl font-bold bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent flex items-center gap-2 cursor-pointer">
+      <i data-lucide="cpu" class="text-pink-400" style="width:26px;height:26px;"></i> VelixTech
+    </a>
+    
+    <!-- Menu Desktop -->
+    <nav class="hidden md:flex gap-8 items-center font-medium text-sm">
+     <a href="#home" onclick="showLanding()" class="nav-link">Beranda</a> 
+     <a href="#products-section" onclick="showLanding()" class="nav-link">Layanan</a> 
+     <a href="#features" onclick="showLanding()" class="nav-link">Keunggulan</a>
+     <a href="#about" onclick="showLanding()" class="nav-link">Tentang Kami</a>
+    </nav>
+
+    <!-- Desktop CTA -->
+    <div class="hidden md:flex items-center gap-4">
+     <button onclick="showCatalog()" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 text-white font-medium text-sm transition shadow-lg shadow-pink-600/25 cursor-pointer">Katalog Produk</button>
+    </div>
+
+    <!-- Tombol Hamburger (☰) Khusus Android / Mobile -->
+    <button id="menu-btn" class="md:hidden text-gray-100 p-2 focus:outline-none" aria-label="Toggle Menu">
+     <i data-lucide="menu" style="width:28px;height:28px;"></i>
+    </button>
    </div>
-   <div style="margin-top:10px;color:rgba(239,68,68,.7);font-size:.9rem">
-    Mohon tunggu sebentar
-   </div>
-  </div>
-  <div class="animated-bg">
-   <div id="particles-container" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0"></div>
-   <header>
-    <div class="container">
-     <div class="logo-container float-animation fade-in">
-      <div style="position:relative">
-       <div class="glow-red-strong" style="position:absolute;inset:0;border-radius:50%;opacity:.5"></div>
-       <svg width="100" height="100" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="45" fill="#ef4444" opacity=".2" /><circle cx="50" cy="50" r="45" stroke="#ef4444" stroke-width="3" fill="none" /><path d="M30 50L50 35L70 50V75C70 77.7614 67.7614 80 65 80H35C32.2386 80 30 77.7614 30 75V50Z" fill="#ef4444" /><path d="M40 80V60C40 58.3431 41.3431 57 43 57H57C58.6569 57 60 58.3431 60 60V80" fill="#1a0000" /><path d="M25 50L50 30L75 50" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><circle cx="50" cy="50" r="48" stroke="#ef4444" stroke-width="2" stroke-dasharray="8 8" opacity=".3">
-         <animatetransform attributename="transform" type="rotate" from="0 50 50" to="360 50 50" dur="20s" repeatcount="indefinite" />
-        </circle>
-       </svg>
+
+   <!-- Dropdown Menu Mobile -->
+   <nav id="mobile-nav" class="hidden md:hidden px-6 pt-3 pb-6 flex flex-col gap-4 bg-gray-950/95 border-b border-white/10 backdrop-blur-xl">
+    <a href="#home" onclick="showLanding(); toggleMenu();" class="mobile-link nav-link py-2 border-b border-white/5 text-base">Beranda</a> 
+    <a href="#products-section" onclick="showLanding(); toggleMenu();" class="mobile-link nav-link py-2 border-b border-white/5 text-base">Layanan</a> 
+    <a href="#features" onclick="showLanding(); toggleMenu();" class="mobile-link nav-link py-2 border-b border-white/5 text-base">Keunggulan</a>
+    <a href="#about" onclick="showLanding(); toggleMenu();" class="mobile-link nav-link py-2 border-b border-white/5 text-base">Tentang Kami</a>
+    <button onclick="showCatalog(); toggleMenu();" class="w-full py-3 text-center rounded-xl bg-pink-600 text-white font-medium mt-1">Katalog Produk</button>
+   </nav>
+  </header>
+
+  <!-- ================= VIEW 1: LANDING PAGE ================= -->
+  <div id="landing-view">
+   <main>
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-36 pb-20 px-6 flex items-center justify-center text-center overflow-hidden min-h-[85vh]">
+     <div class="blob-1 absolute top-10 left-1/4 w-72 h-72 rounded-full bg-gradient-to-br from-pink-600/25 to-purple-600/25 blur-3xl pointer-events-none"></div>
+     <div class="blob-2 absolute top-1/3 right-10 w-80 h-80 rounded-full bg-gradient-to-tr from-cyan-500/20 to-indigo-600/25 blur-3xl pointer-events-none"></div>
+     <div class="pulse-orb absolute bottom-5 left-1/3 w-64 h-64 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-3xl pointer-events-none"></div>
+     
+     <div class="relative z-10 max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-pink-400 mb-6 backdrop-blur-md shadow-lg shadow-pink-500/10">
+       <i data-lucide="sparkles" style="width:14px;height:14px;"></i> Platform Otomasi & Cloud Server Profesional
+      </div>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 tracking-tight">
+       Solusi Digital & <span class="bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">Bot Otomatisasi</span> Terbaik
+      </h1>
+      <p class="text-base sm:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+       Tingkatkan efisiensi bisnis, komunitas, dan server digital Anda dengan infrastruktur sistem yang handal, cepat, dan aktif 24/7.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+       <button onclick="showCatalog()" class="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-pink-600 to-purple-600 transition hover:scale-105 shadow-xl shadow-pink-600/30 cursor-pointer">Jelajahi Produk</button>
+       <button onclick="showCatalog()" class="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-gray-300 bg-white/5 border border-white/10 hover:bg-white/10 transition cursor-pointer">Mulai Sekarang</button>
       </div>
      </div>
-     <h1 class="store-name gradient-text fade-in fade-in-delay-1">MociTech</h1>
-     <p class="store-tagline fade-in fade-in-delay-2">Belanja Berkualitas, Pembayaran Praktis</p>
-     <div class="divider fade-in fade-in-delay-3">
-      <div class="divider-line"></div>
-      <div class="divider-line"></div>
-      <div class="divider-line"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="relative py-12 border-y border-white/10 bg-white/[0.02] overflow-hidden">
+     <div class="pulse-orb absolute -bottom-10 right-1/4 w-72 h-72 rounded-full bg-indigo-600/15 blur-3xl pointer-events-none"></div>
+     <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
+      <div>
+       <h3 class="text-3xl lg:text-4xl font-bold text-white mb-1">500+</h3>
+       <p class="text-sm text-gray-400">Klien Aktif</p>
+      </div>
+      <div>
+       <h3 class="text-3xl lg:text-4xl font-bold text-white mb-1">99.9%</h3>
+       <p class="text-sm text-gray-400">Server Uptime</p>
+      </div>
+      <div>
+       <h3 class="text-3xl lg:text-4xl font-bold text-white mb-1">24/7</h3>
+       <p class="text-sm text-gray-400">Dukungan Support</p>
+      </div>
+      <div>
+       <h3 class="text-3xl lg:text-4xl font-bold text-white mb-1">100%</h3>
+       <p class="text-sm text-gray-400">Aman & Terpercaya</p>
+      </div>
      </div>
-    </div>
-   </header>
-   <main>
-    <div class="container">
-     <div class="payment-header fade-in fade-in-delay-2">
-      <h2 class="payment-title">Scan QRIS untuk Pembayaran</h2>
-      <p class="payment-description">Metode pembayaran tercepat dan termudah dengan teknologi QRIS</p>
+    </section>
+
+    <!-- Products Preview Section -->
+    <section id="products-section" class="py-20 px-6 max-w-7xl mx-auto">
+     <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-4">Layanan & Produk Unggulan</h2>
+      <p class="text-gray-400">Pilih berbagai macam solusi otomatisasi digital dan aplikasi premium untuk kebutuhan Anda.</p>
      </div>
-     <div class="qris-card-wrapper fade-in fade-in-delay-3">
-      <div class="qris-card neon-border hover-lift shine-effect" id="qris-main-card">
-       <div style="position:relative">
-        <div class="scan-line"></div>
-        <div style="text-align:center">
-         <div class="qris-badge glow-red">
-          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-           <rect width="10" height="10" x="2" y="2" fill="#ef4444" rx="2" /><rect width="10" height="10" x="16" y="2" fill="#ef4444" rx="2" /><rect width="10" height="10" x="2" y="16" fill="#ef4444" rx="2" /><rect width="4" height="4" x="18" y="18" fill="#ef4444" /><rect width="4" height="4" x="22" y="22" fill="#ef4444" />
-          </svg><span>QRIS PAYMENT</span>
+
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="glow-card">
+       <div class="glow-card-inner flex flex-col justify-between">
+        <div>
+         <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
+          <i data-lucide="server" style="width:24px;height:24px;"></i>
          </div>
+         <h3 class="text-xl font-bold mb-2">Panel Pterodactyl</h3>
+         <p class="text-gray-400 text-sm mb-6">Pilihan kapasitas server game atau bot hosting mulai dari 1GB hingga Unlimited dengan performa stabil.</p>
         </div>
-        <div class="qris-image-container">
-         <div class="qris-image-wrapper glow-red">
-          <img src="https://files.catbox.moe/lm8ajx.jpg" alt="QRIS By Moci Tech" class="qris-image">
-          <div class="corner-decoration corner-tl"></div>
-          <div class="corner-decoration corner-tr"></div>
-          <div class="corner-decoration corner-bl"></div>
-          <div class="corner-decoration corner-br"></div>
+        <button onclick="showDetail('pterodactyl')" class="inline-flex items-center gap-2 text-pink-400 font-semibold text-sm hover:underline cursor-pointer bg-transparent border-0 p-0">Pilih <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></button>
+       </div>
+      </div>
+
+      <div class="glow-card">
+       <div class="glow-card-inner flex flex-col justify-between">
+        <div>
+         <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mb-4">
+          <i data-lucide="crown" style="width:24px;height:24px;"></i>
          </div>
+         <h3 class="text-xl font-bold mb-2">Aplikasi Premium</h3>
+         <p class="text-gray-400 text-sm mb-6">Akun aplikasi premium pilihan: YouTube, Canva, Netflix, ChatGPT Plus, dan Gemini Pro.</p>
         </div>
-        <div class="scan-instruction">
-         <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="2" width="14" height="20" rx="2" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.1)" /><circle cx="12" cy="19" r="1" fill="#ef4444" /><rect x="7" y="5" width="10" height="11" rx="1" fill="rgba(239,68,68,.2)" /><path d="M10 8L14 12M14 8L10 12" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round" />
-         </svg><span>Arahkan kamera e-wallet ke kode QRIS di atas</span>
+        <button onclick="showDetail('premium')" class="inline-flex items-center gap-2 text-pink-400 font-semibold text-sm hover:underline cursor-pointer bg-transparent border-0 p-0">Pilih <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></button>
+       </div>
+      </div>
+
+      <div class="glow-card">
+       <div class="glow-card-inner flex flex-col justify-between">
+        <div>
+         <div class="w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400 mb-4">
+          <i data-lucide="message-square" style="width:24px;height:24px;"></i>
+         </div>
+         <h3 class="text-xl font-bold mb-2">WhatsApp Bot Store</h3>
+         <p class="text-gray-400 text-sm mb-6">Bot otomatisasi WhatsApp untuk jualan online, auto-reply, manajemen grup, dan transaksi digital.</p>
         </div>
-        <div class="supported-apps">
-         <div class="app-badge hover-lift ripple">
-          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-           <rect x="3" y="5" width="18" height="14" rx="2" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.2)" /><path d="M3 9H21" stroke="#ef4444" stroke-width="2" /><rect x="6" y="13" width="5" height="3" rx="1" fill="#ef4444" />
-          </svg><span>GoPay</span>
+        <button onclick="showDetail('whatsapp')" class="inline-flex items-center gap-2 text-pink-400 font-semibold text-sm hover:underline cursor-pointer bg-transparent border-0 p-0">Pilih <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></button>
+       </div>
+      </div>
+
+      <div class="glow-card">
+       <div class="glow-card-inner flex flex-col justify-between">
+        <div>
+         <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4">
+          <i data-lucide="shield" style="width:24px;height:24px;"></i>
          </div>
-         <div class="app-badge hover-lift ripple">
-          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-           <path d="M3 9L12 2L21 9V20C21 21.1046 20.1046 22 19 22H5C3.89543 22 3 21.1046 3 20V9Z" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.1)" /><path d="M9 22V12H15V22" stroke="#ef4444" stroke-width="2" /><circle cx="12" cy="9" r="1.5" fill="#ef4444" />
-          </svg><span>OVO</span>
-         </div>
-         <div class="app-badge hover-lift ripple">
-          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-           <circle cx="12" cy="12" r="9" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.1)" /><path d="M8 12H16M12 8V16" stroke="#ef4444" stroke-width="2" stroke-linecap="round" /><circle cx="12" cy="12" r="6" stroke="#ef4444" stroke-width="1" opacity=".5" />
-          </svg><span>DANA</span>
-         </div>
-         <div class="app-badge hover-lift ripple">
-          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-           <path d="M3 3H8L11 16H20L23 7H9" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /><circle cx="11" cy="20" r="2" fill="#ef4444" /><circle cx="19" cy="20" r="2" fill="#ef4444" />
-          </svg><span>ShopeePay</span>
-         </div>
+         <h3 class="text-xl font-bold mb-2">Discord Bot Moderasi</h3>
+         <p class="text-gray-400 text-sm mb-6">Amankan komunitas server Discord Anda dengan bot keamanan anti-raid, musik, dan sistem tiket.</p>
         </div>
+        <button onclick="showDetail('discord')" class="inline-flex items-center gap-2 text-pink-400 font-semibold text-sm hover:underline cursor-pointer bg-transparent border-0 p-0">Pilih <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></button>
+       </div>
+      </div>
+
+      <div class="glow-card">
+       <div class="glow-card-inner flex flex-col justify-between">
+        <div>
+         <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+          <i data-lucide="bot" style="width:24px;height:24px;"></i>
+         </div>
+         <h3 class="text-xl font-bold mb-2">Telegram AI Assistant Bot</h3>
+         <p class="text-gray-400 text-sm mb-6">Bot Telegram pintar berbasis AI untuk melayani member grup secara otomatis dan interaktif.</p>
+        </div>
+        <button onclick="showDetail('telegram')" class="inline-flex items-center gap-2 text-pink-400 font-semibold text-sm hover:underline cursor-pointer bg-transparent border-0 p-0">Pilih <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></button>
        </div>
       </div>
      </div>
-     <div class="info-cards">
-      <div class="info-card hover-lift fade-in fade-in-delay-1">
-       <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="30" cy="30" r="28" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.1)" /><path d="M30 15L35 25L45 27L37 35L39 45L30 40L21 45L23 35L15 27L25 25L30 15Z" fill="#ef4444" /><circle cx="30" cy="30" r="20" stroke="#ef4444" stroke-width="1" opacity=".3" />
-       </svg>
-       <h3>Super Cepat</h3>
-       <p>Pembayaran terverifikasi dalam hitungan detik</p>
+    </section>
+
+    <!-- Features / Why Us -->
+    <section id="features" class="py-20 px-6 bg-white/[0.01] border-y border-white/10">
+     <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+       <h2 class="text-3xl lg:text-4xl font-bold mb-4">Mengapa Memilih VelixTech?</h2>
+       <p class="text-gray-400">Komitmen kami memberikan performa maksimal untuk kelangsungan digital Anda.</p>
       </div>
-      <div class="info-card hover-lift fade-in fade-in-delay-2">
-       <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="15" y="20" width="30" height="25" rx="3" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.1)" /><rect x="25" y="30" width="10" height="8" rx="1" fill="#ef4444" /><circle cx="30" cy="34" r="2" fill="#000" /><path d="M22 20V17C22 13.6863 24.6863 11 28 11H32C35.3137 11 38 13.6863 38 17V20" stroke="#ef4444" stroke-width="2" />
-       </svg>
-       <h3>100% Aman</h3>
-       <p>Terjamin keamanannya oleh Bank Indonesia</p>
-      </div>
-      <div class="info-card hover-lift fade-in fade-in-delay-3">
-       <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="30" cy="30" r="28" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,.1)" /><path d="M20 30L27 37L40 23" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><circle cx="30" cy="30" r="23" stroke="#ef4444" stroke-width="1" opacity=".3" />
-       </svg>
-       <h3>Praktis</h3>
-       <p>Scan sekali, langsung selesai</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+       <div class="p-8 rounded-2xl bg-white/5 border border-white/10">
+        <div class="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center text-pink-400 mb-4">
+         <i data-lucide="zap" style="width:20px;height:20px;"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Kecepatan Tinggi</h3>
+        <p class="text-gray-400 text-sm">Respon bot super instan tanpa jeda, didukung infrastruktur cloud server berkualitas tinggi.</p>
+       </div>
+
+       <div class="p-8 rounded-2xl bg-white/5 border border-white/10">
+        <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
+         <i data-lucide="lock" style="width:20px;height:20px;"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Keamanan Terjamin</h3>
+        <p class="text-gray-400 text-sm">Data privasi Anda dan klien aman bersama enkripsi sistem ketat yang selalu dipantau.</p>
+       </div>
+
+       <div class="p-8 rounded-2xl bg-white/5 border border-white/10">
+        <div class="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+         <i data-lucide="headphones" style="width:20px;height:20px;"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Support 24 Jam</h3>
+        <p class="text-gray-400 text-sm">Tim teknis siap membantu kendala setup maupun maintenance kapan pun Anda butuhkan.</p>
+       </div>
       </div>
      </div>
-    </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 max-w-7xl mx-auto">
+     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center rounded-3xl p-8 md:p-14 border border-white/10 bg-white/[0.02] backdrop-blur-md shadow-2xl">
+      <div>
+       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-xs text-pink-400 mb-6">
+        <i data-lucide="shield-check" style="width:14px;height:14px;"></i> Tentang VelixTech
+       </div>
+       <h2 class="text-3xl lg:text-4xl font-bold mb-6 tracking-tight leading-snug">
+        Membangun Standar Baru <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Otomasi & Cloud</span>
+       </h2>
+       <p class="text-gray-300 leading-relaxed text-base mb-6">
+        VelixTech adalah penyedia layanan infrastruktur digital dan otomatisasi server terkemuka. Kami mendedikasikan diri untuk merancang ekosistem digital yang tangguh bagi developer, pebisnis online, dan pengelola komunitas melalui teknologi cloud berkinerja tinggi dan sistem bot cerdas yang beroperasi tanpa henti.
+       </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+       <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+        <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 mb-4">
+         <i data-lucide="zap" style="width:20px;height:20px;"></i>
+        </div>
+        <h4 class="font-bold text-white mb-1">High Performance</h4>
+        <p class="text-xs text-gray-400">Infrastruktur dioptimalkan untuk latensi terendah dan respons instan.</p>
+       </div>
+       <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+        <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
+         <i data-lucide="shield" style="width:20px;height:20px;"></i>
+        </div>
+        <h4 class="font-bold text-white mb-1">Enterprise Security</h4>
+        <p class="text-xs text-gray-400">Proteksi data ketat dan enkripsi berlapis untuk keamanan penuh.</p>
+       </div>
+       <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4">
+         <i data-lucide="cpu" style="width:20px;height:20px;"></i>
+        </div>
+        <h4 class="font-bold text-white mb-1">Automation First</h4>
+        <p class="text-xs text-gray-400">Sistem otomatisasi terintegrasi untuk efisiensi operasional maksimal.</p>
+       </div>
+       <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+         <i data-lucide="headphones" style="width:20px;height:20px;"></i>
+        </div>
+        <h4 class="font-bold text-white mb-1">24/7 Expert Support</h4>
+        <p class="text-xs text-gray-400">Dukungan teknis profesional siap membantu setiap kendala Anda.</p>
+       </div>
+      </div>
+     </div>
+    </section>
    </main>
-   <footer>
-    <div class="container">
-     <div class="footer-content">
-      <span>© 2024 - Terima kasih telah berbelanja dengan kami</span>
-      <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-       <path d="M10 3.5C10 3.5 5 6 5 10C5 13 7 16 10 17C13 16 15 13 15 10C15 6 10 3.5 10 3.5Z" fill="#ef4444" /><path d="M10 3.5C10 3.5 5 6 5 10C5 13 7 16 10 17C13 16 15 13 15 10C15 6 10 3.5 10 3.5Z" stroke="#ef4444" stroke-width="1.5" stroke-linejoin="round" />
-      </svg>
+  </div>
+
+
+  <!-- ================= VIEW 2: KATALOG PRODUK UTAMA ================= -->
+  <div id="catalog-view" class="hidden min-h-screen pt-32 pb-24 px-6 max-w-7xl mx-auto">
+   <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-12 border-b border-white/10 pb-6">
+    <div>
+     <h1 class="text-3xl lg:text-4xl font-bold mb-2">Katalog Produk & Layanan</h1>
+     <p class="text-gray-400 text-sm">Pilih kategori produk di bawah ini untuk melihat detail pilihan spesifikasi dan varian.</p>
+    </div>
+    <button onclick="showLanding()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition text-sm font-semibold cursor-pointer">
+     <i data-lucide="arrow-left" style="width:18px;height:18px;"></i> Kembali ke Beranda
+    </button>
+   </div>
+
+   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="glow-card">
+     <div class="glow-card-inner flex flex-col justify-between">
+      <div>
+       <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
+        <i data-lucide="server" style="width:24px;height:24px;"></i>
+       </div>
+       <h3 class="text-xl font-bold mb-2">Panel Pterodactyl</h3>
+       <p class="text-gray-400 text-sm mb-6">Pilihan kapasitas server game atau bot hosting mulai dari 1GB hingga kapasitas Unlimited dengan performa stabil dan anti lag.</p>
+      </div>
+      <button onclick="showDetail('pterodactyl')" class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 transition text-center font-semibold text-sm shadow-lg shadow-pink-600/30 cursor-pointer">
+       Pilih
+      </button>
      </div>
     </div>
-   </footer>
+
+    <div class="glow-card">
+     <div class="glow-card-inner flex flex-col justify-between">
+      <div>
+       <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mb-4">
+        <i data-lucide="crown" style="width:24px;height:24px;"></i>
+       </div>
+       <h3 class="text-xl font-bold mb-2">Aplikasi Premium</h3>
+       <p class="text-gray-400 text-sm mb-6">Berbagai akun aplikasi premium pilihan seperti YouTube Premium, Canva Pro, Netflix, ChatGPT Plus, dan Gemini Pro.</p>
+      </div>
+      <button onclick="showDetail('premium')" class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 transition text-center font-semibold text-sm shadow-lg shadow-pink-600/30 cursor-pointer">
+       Pilih
+      </button>
+     </div>
+    </div>
+
+    <div class="glow-card">
+     <div class="glow-card-inner flex flex-col justify-between">
+      <div>
+       <div class="w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400 mb-4">
+        <i data-lucide="message-square" style="width:24px;height:24px;"></i>
+       </div>
+       <h3 class="text-xl font-bold mb-2">WhatsApp Bot Store</h3>
+       <p class="text-gray-400 text-sm mb-6">Solusi otomatisasi WhatsApp untuk toko online, sistem transaksi digital, auto-reply, dan manajemen grup interaktif.</p>
+      </div>
+      <button onclick="showDetail('whatsapp')" class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 transition text-center font-semibold text-sm shadow-lg shadow-pink-600/30 cursor-pointer">
+       Pilih
+      </button>
+     </div>
+    </div>
+
+    <div class="glow-card">
+     <div class="glow-card-inner flex flex-col justify-between">
+      <div>
+       <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4">
+        <i data-lucide="shield" style="width:24px;height:24px;"></i>
+       </div>
+       <h3 class="text-xl font-bold mb-2">Discord Bot Moderasi</h3>
+       <p class="text-gray-400 text-sm mb-6">Amankan komunitas server Discord Anda dengan bot keamanan anti-raid, sistem tiket, verifikasi, dan pemutar musik 24/7.</p>
+      </div>
+      <button onclick="showDetail('discord')" class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 transition text-center font-semibold text-sm shadow-lg shadow-pink-600/30 cursor-pointer">
+       Pilih
+      </button>
+     </div>
+    </div>
+
+    <div class="glow-card">
+     <div class="glow-card-inner flex flex-col justify-between">
+      <div>
+       <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+        <i data-lucide="bot" style="width:24px;height:24px;"></i>
+       </div>
+       <h3 class="text-xl font-bold mb-2">Telegram AI Assistant Bot</h3>
+       <p class="text-gray-400 text-sm mb-6">Bot Telegram pintar berbasis AI untuk melayani member grup secara otomatis, meringkas teks, dan menjawab pertanyaan.</p>
+      </div>
+      <button onclick="showDetail('telegram')" class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 transition text-center font-semibold text-sm shadow-lg shadow-pink-600/30 cursor-pointer">
+       Pilih
+      </button>
+     </div>
+    </div>
+   </div>
   </div>
-  <script>setTimeout(function(){const l=document.getElementById('loading-screen');if(l){l.classList.add('hidden')}},1800);function createParticles(){const c=document.getElementById('particles-container');if(!c)return;for(let i=0;i<30;i++){const d=document.createElement('div');d.className='particle';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.setProperty('--tx',(Math.random()-.5)*200+'px');d.style.setProperty('--ty',(Math.random()-.5)*200+'px');d.style.animationDelay=Math.random()*4+'s';c.appendChild(d)}}createParticles();const q=document.getElementById('qris-main-card');if(q){q.addEventListener('mousemove',function(e){const r=q.getBoundingClientRect();const x=e.clientX-r.left;const y=e.clientY-r.top;q.style.transform='perspective(1000px) rotateX('+((y-r.height/2)/20)+'deg) rotateY('+((r.width/2-x)/20)+'deg) translateY(-5px)'});q.addEventListener('mouseleave',function(){q.style.transform='perspective(1000px) rotateX(0) rotateY(0) translateY(0)'})}document.addEventListener('contextmenu',function(e){e.preventDefault();return false},false);document.addEventListener('keydown',function(e){if(e.keyCode==123||e.ctrlKey&&e.shiftKey&&e.keyCode==73||e.ctrlKey&&e.shiftKey&&e.keyCode==74||e.ctrlKey&&e.keyCode==85||e.ctrlKey&&e.shiftKey&&e.keyCode==67){e.preventDefault();return false}},false);document.addEventListener('selectstart',function(e){e.preventDefault();return false},false);document.addEventListener('copy',function(e){e.preventDefault();return false},false);document.addEventListener('cut',function(e){e.preventDefault();return false},false);document.addEventListener('paste',function(e){e.preventDefault();return false},false);document.addEventListener('dragstart',function(e){e.preventDefault();return false},false);</script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b491c7f757834ae',t:'MTc2Njg0MTU4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+
+  <!-- ================= VIEW 3: DETAIL PRODUK ================= -->
+  <div id="detail-view" class="hidden min-h-screen pt-32 pb-24 px-6 max-w-7xl mx-auto">
+   <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-12 border-b border-white/10 pb-6">
+    <div>
+     <button onclick="showCatalog()" class="inline-flex items-center gap-2 text-pink-400 text-sm font-semibold mb-3 hover:underline bg-transparent border-0 p-0 cursor-pointer">
+      <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> Kembali ke Katalog
+     </button>
+     <h1 id="detail-title" class="text-3xl lg:text-4xl font-bold mb-2">Nama Produk</h1>
+     <p id="detail-desc" class="text-gray-400 text-sm">Deskripsi kategori produk.</p>
+    </div>
+   </div>
+   <div id="variants-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+
+
+  <!-- ================= VIEW 4: KEBIJAKAN PRIVASI ================= -->
+  <div id="privacy-view" class="hidden min-h-screen pt-32 pb-24 px-6 max-w-4xl mx-auto">
+   <button onclick="showLanding()" class="inline-flex items-center gap-2 text-pink-400 text-sm font-semibold mb-6 hover:underline bg-transparent border-0 p-0 cursor-pointer">
+    <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> Kembali ke Beranda
+   </button>
+   <div class="p-8 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-md shadow-2xl space-y-6">
+    <h1 class="text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Kebijakan Privasi (Privacy Policy)</h1>
+    <p class="text-gray-300 text-sm leading-relaxed">VelixTech berkomitmen penuh untuk melindungi dan menghargai privasi data pribadi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan menjaga keamanan informasi Anda saat mengakses layanan dan platform digital kami.</p>
+    
+    <h3 class="text-lg font-bold text-white mt-4">1. Informasi yang Kami Kumpulkan</h3>
+    <p class="text-gray-400 text-sm leading-relaxed">Kami dapat mengumpulkan informasi kontak seperti alamat email (<span class="text-pink-400">ppobsisteam@gmail.com</span>) dan nomor WhatsApp saat Anda melakukan komunikasi, pemesanan, atau transaksi layanan digital.</p>
+    
+    <h3 class="text-lg font-bold text-white mt-4">2. Penggunaan Informasi</h3>
+    <p class="text-gray-400 text-sm leading-relaxed">Informasi yang Anda berikan digunakan untuk memproses pesanan layanan, memberikan dukungan teknis (support), serta mengirimkan konfirmasi transaksi secara aman dan tepat waktu.</p>
+    
+    <h3 class="text-lg font-bold text-white mt-4">3. Perlindungan & Keamanan Data</h3>
+    <p class="text-gray-400 text-sm leading-relaxed">Kami menerapkan standar keamanan enkripsi yang ketat. VelixTech menjamin bahwa kami **tidak pernah** memperjualbelikan, menyewakan, atau mendistribusikan data pribadi Anda kepada pihak ketiga manapun tanpa persetujuan hukum yang sah.</p>
+   </div>
+  </div>
+
+
+  <!-- ================= VIEW 5: SYARAT & KETENTUAN (TOS) ================= -->
+  <div id="terms-view" class="hidden min-h-screen pt-32 pb-24 px-6 max-w-4xl mx-auto">
+   <button onclick="showLanding()" class="inline-flex items-center gap-2 text-pink-400 text-sm font-semibold mb-6 hover:underline bg-transparent border-0 p-0 cursor-pointer">
+    <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> Kembali ke Beranda
+   </button>
+   <div class="p-8 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-md shadow-2xl space-y-6">
+    <h1 class="text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Syarat & Ketentuan (Terms of Service)</h1>
+    <p class="text-gray-300 text-sm leading-relaxed">Selamat datang di VelixTech. Dengan mengakses dan menggunakan layanan kami, Anda menyetujui untuk terikat dengan syarat dan ketentuan yang berlaku sesuai dengan peraturan perundang-undangan di wilayah Republik Indonesia (termasuk UU ITE).</p>
+    
+    <h3 class="text-lg font-bold text-white mt-4">1. Ketentuan Layanan & Transaksi</h3>
+    <p class="text-gray-400 text-sm leading-relaxed">Semua pembelian produk, panel server, bot otomatisasi, maupun akun aplikasi premium bersifat final setelah pembayaran dikonfirmasi dan diproses oleh sistem atau admin resmi kami.</p>
+    
+    <h3 class="text-lg font-bold text-white mt-4">2. Tanggung Jawab Pengguna</h3>
+    <p class="text-gray-400 text-sm leading-relaxed">Pengguna wajib menjaga kerahasiaan data akun masing-masing. Dilarang keras menggunakan infrastruktur atau layanan VelixTech untuk tindakan yang melanggar hukum, penipuan, spam, atau aktivitas merugikan pihak lain sesuai ketentuan UU ITE.</p>
+    
+    <h3 class="text-lg font-bold text-white mt-4">3. Batasan Tanggung Jawab (Disclaimer)</h3>
+    <p class="text-gray-400 text-sm leading-relaxed">VelixTech berkomitmen menjaga uptime server hingga 99.9%. Namun, kami tidak bertanggung jawab atas gangguan eksternal yang di luar kendali teknis kami (seperti gangguan jaringan global atau kebijakan pihak ketiga penyedia aplikasi terkait).</p>
+   </div>
+  </div>
+
+
+  <!-- ================= VIEW 6: KONTAK KAMI ================= -->
+  <div id="contact-view" class="hidden min-h-screen pt-32 pb-24 px-6 max-w-4xl mx-auto">
+   <button onclick="showLanding()" class="inline-flex items-center gap-2 text-pink-400 text-sm font-semibold mb-6 hover:underline bg-transparent border-0 p-0 cursor-pointer">
+    <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> Kembali ke Beranda
+   </button>
+   <div class="p-8 sm:p-12 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-md shadow-2xl space-y-8 text-center">
+    <div>
+     <h1 class="text-3xl sm:text-4xl font-bold mb-3 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Hubungi VelixTech</h1>
+     <p class="text-gray-400 text-sm max-w-lg mx-auto">Tim dukungan teknis dan layanan pelanggan kami siap membantu Anda 24/7 melalui saluran resmi di bawah ini.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+     <!-- Email Card -->
+     <div class="p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center text-center">
+      <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 mb-4">
+       <i data-lucide="mail" style="width:24px;height:24px;"></i>
+      </div>
+      <h3 class="font-bold text-white mb-1">Email Resmi</h3>
+      <p class="text-xs text-gray-400 mb-4">Untuk urusan kerjasama & kendala sistem</p>
+      <a href="mailto:ppobsisteam@gmail.com" class="text-sm font-semibold text-pink-400 hover:underline">ppobsisteam@gmail.com</a>
+     </div>
+
+     <!-- WhatsApp Card -->
+     <div class="p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center text-center">
+      <div class="w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400 mb-4">
+       <i data-lucide="message-circle" style="width:24px;height:24px;"></i>
+      </div>
+      <h3 class="font-bold text-white mb-1">WhatsApp Support</h3>
+      <p class="text-xs text-gray-400 mb-4">Respon cepat konsultasi & transaksi</p>
+      <a href="https://wa.me/6287852584598" target="_blank" class="px-4 py-2 rounded-xl bg-green-600 hover:bg-green-500 text-white text-xs font-semibold transition shadow-lg shadow-green-600/30">Chat WhatsApp</a>
+     </div>
+    </div>
+   </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-black/60 py-12 px-6">
+   <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+    <div>
+     <div class="text-xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-2">VelixTech</div>
+     <p class="text-xs text-gray-500">&copy; 2026 VelixTech. Hak cipta dilindungi undang-undang.</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400 font-medium">
+     <button onclick="showPrivacy()" class="hover:text-pink-400 transition bg-transparent border-0 p-0 cursor-pointer text-gray-400">Kebijakan Privasi</button>
+     <button onclick="showTerms()" class="hover:text-pink-400 transition bg-transparent border-0 p-0 cursor-pointer text-gray-400">Syarat & Ketentuan</button>
+     <button onclick="showContact()" class="hover:text-pink-400 transition bg-transparent border-0 p-0 cursor-pointer text-gray-400">Kontak Kami</button>
+    </div>
+   </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    
+    function toggleMenu() {
+      mobileNav.classList.toggle('hidden');
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+
+    const landingView = document.getElementById('landing-view');
+    const catalogView = document.getElementById('catalog-view');
+    const detailView = document.getElementById('detail-view');
+    const privacyView = document.getElementById('privacy-view');
+    const termsView = document.getElementById('terms-view');
+    const contactView = document.getElementById('contact-view');
+
+    function hideAllViews() {
+      landingView.classList.add('hidden');
+      catalogView.classList.add('hidden');
+      detailView.classList.add('hidden');
+      privacyView.classList.add('hidden');
+      termsView.classList.add('hidden');
+      contactView.classList.add('hidden');
+    }
+
+    function showLanding() {
+      hideAllViews();
+      landingView.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function showCatalog() {
+      hideAllViews();
+      catalogView.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function showPrivacy() {
+      hideAllViews();
+      privacyView.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function showTerms() {
+      hideAllViews();
+      termsView.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function showContact() {
+      hideAllViews();
+      contactView.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    const productData = {
+      pterodactyl: {
+        title: "Panel Pterodactyl",
+        desc: "Pilih spesifikasi RAM server yang Anda butuhkan, mulai dari 1GB hingga Unlimited dengan uptime 99.9%.",
+        variants: [
+          { name: "Panel Pterodactyl 1GB", price: "Rp 10.000 /bulan", spec: "1GB RAM / 1 Core CPU / 10GB NVMe" },
+          { name: "Panel Pterodactyl 2GB", price: "Rp 15.000 /bulan", spec: "2GB RAM / 1 Core CPU / 20GB NVMe" },
+          { name: "Panel Pterodactyl 3GB", price: "Rp 20.000 /bulan", spec: "3GB RAM / 2 Core CPU / 30GB NVMe" },
+          { name: "Panel Pterodactyl 4GB", price: "Rp 25.000 /bulan", spec: "4GB RAM / 2 Core CPU / 40GB NVMe" },
+          { name: "Panel Pterodactyl 5GB", price: "Rp 30.000 /bulan", spec: "5GB RAM / 2 Core CPU / 50GB NVMe" },
+          { name: "Panel Pterodactyl 6GB", price: "Rp 35.000 /bulan", spec: "6GB RAM / 3 Core CPU / 60GB NVMe" },
+          { name: "Panel Pterodactyl 7GB", price: "Rp 40.000 /bulan", spec: "7GB RAM / 3 Core CPU / 70GB NVMe" },
+          { name: "Panel Pterodactyl 8GB", price: "Rp 45.000 /bulan", spec: "8GB RAM / 4 Core CPU / 80GB NVMe" },
+          { name: "Panel Pterodactyl 9GB", price: "Rp 50.000 /bulan", spec: "9GB RAM / 4 Core CPU / 90GB NVMe" },
+          { name: "Panel Pterodactyl 10GB", price: "Rp 55.000 /bulan", spec: "10GB RAM / 4 Core CPU / 100GB NVMe" },
+          { name: "Panel Pterodactyl Unlimited", price: "Rp 75.000 /bulan", spec: "Unlimited RAM / Unlimited CPU / Unlimited NVMe" }
+        ]
+      },
+      premium: {
+        title: "Aplikasi Premium",
+        desc: "Pilih akun aplikasi premium resmi berkualitas tinggi dengan garansi penuh selama masa langganan.",
+        variants: [
+          { name: "YouTube Premium", price: "Rp 15.000 /bulan", spec: "Tanpa Iklan, Putar Latar Belakang, YouTube Music Included" },
+          { name: "Canva Pro", price: "Rp 10.000 /bulan", spec: "Akses Semua Template Pro, Brand Kit, Background Remover" },
+          { name: "Netflix Premium", price: "Rp 35.000 /bulan", spec: "Resolusi 4K UHD, Private Screen, Anti Nobar, Stabil" },
+          { name: "ChatGPT Plus", price: "Rp 50.000 /bulan", spec: "Akses GPT-4o, Respon Cepat, Advanced Data Analysis" },
+          { name: "Gemini Pro / Advanced", price: "Rp 45.000 /bulan", spec: "Akses Google Gemini Advanced Resmi & AI Terbaru" }
+        ]
+      },
+      whatsapp: {
+        title: "WhatsApp Bot Store",
+        desc: "Pilih paket bot otomatisasi WhatsApp yang sesuai dengan skala bisnis atau toko online Anda.",
+        variants: [
+          { name: "WhatsApp Bot Starter", price: "Rp 20.000 /bulan", spec: "Auto-reply, Cek Saldo, Sesi Stabil" },
+          { name: "WhatsApp Bot Pro Store", price: "Rp 45.000 /bulan", spec: "Transaksi Otomatis, Manajemen Grup, Fitur Toko Lengkap" },
+          { name: "WhatsApp Bot Enterprise", price: "Rp 90.000 /bulan", spec: "Multi Device, Custom Plugin, Full Source Code" }
+        ]
+      },
+      discord: {
+        title: "Discord Bot Moderasi",
+        desc: "Pilih paket bot server Discord untuk keamanan, musik, dan fitur komunitas.",
+        variants: [
+          { name: "Discord Bot Standard", price: "Rp 25.000 /bulan", spec: "Anti-Raid, Sistem Tiket, Verifikasi Member" },
+          { name: "Discord Bot Music & Economy", price: "Rp 40.000 /bulan", spec: "Music Player 24/7, Ekonomi Server, Level Sistem" },
+          { name: "Discord Bot Custom Enterprise", price: "Rp 80.000 /bulan", spec: "Full Fitur Custom Sesuai Request Komunitas Anda" }
+        ]
+      },
+      telegram: {
+        title: "Telegram AI Assistant Bot",
+        desc: "Pilih paket bot Telegram terintegrasi AI untuk asisten grup atau channel Anda.",
+        variants: [
+          { name: "Telegram AI Basic", price: "Rp 30.000 /bulan", spec: "AI Tanya Jawab, Ringkasan Pesan Otomatis" },
+          { name: "Telegram AI Pro Group Manager", price: "Rp 60.000 /bulan", spec: "AI Pintar + Auto Moderator Grup & Captcha" }
+        ]
+      }
+    };
+
+    function showDetail(categoryKey) {
+      hideAllViews();
+      detailView.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      const data = productData[categoryKey];
+      document.getElementById('detail-title').innerText = data.title;
+      document.getElementById('detail-desc').innerText = data.desc;
+
+      const container = document.getElementById('variants-container');
+      container.innerHTML = "";
+
+      data.variants.forEach(variant => {
+        const card = document.createElement('div');
+        card.className = "glow-card";
+        card.innerHTML = `
+          <div class="glow-card-inner flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold mb-2">${variant.name}</h3>
+              <p class="text-gray-400 text-xs mb-4">${variant.spec}</p>
+              <div class="text-2xl font-extrabold text-white mb-6">${variant.price}</div>
+            </div>
+            <button onclick="orderVariant('${variant.name}', '${variant.price}', '${variant.spec}')" class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 transition text-center font-semibold text-sm shadow-lg shadow-pink-600/30 cursor-pointer">
+              Pilih
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      lucide.createIcons();
+    }
+
+    function orderVariant(variantName, variantPrice, variantSpec) {
+      const phoneNumber = "6287852584598";
+      const message = `Halo Admin MociTech, saya tertarik dan ingin memesan produk berikut:\n\n*Nama Produk:* ${variantName}\n*Harga:* ${variantPrice}\n*Spesifikasi:* ${variantSpec}\n\nMohon informasi selanjutnya untuk proses pembayaran, terima kasih!`;
+      
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+ </body>
 </html>
